@@ -1,13 +1,3 @@
-@font-face {
-    src: url(Fonts/courier_new.ttf);
-    font-family: "courier";
-}
-
-@font-face {
-    src: url(Fonts/times_new_roman.ttf);
-    font-family: "timesNewRoman";
-}
-
 :root {
     --mainBackgroundColor: rgb(252, 252, 252);
     --mainTextColor: rgb(75, 75, 75);
