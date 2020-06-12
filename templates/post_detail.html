@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="pageContainer">
+    <div class="reducedBlog">
+      <div class="interiorMargin">
+        <div>
+          <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+          <p class="fadeText">{{ post.author }} | {{ post.created_on }}</p>
+          <p>{{ object.content | safe |linebreaksbr}}</p>
+        </div>
+        {% block authorbar %} {% include 'widgets\authorbar.html' %} {% endblock authorbar %}
+      </div>
+    </div>
+</div>
+
+{% endblock content %}
