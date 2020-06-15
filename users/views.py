@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import views
+from blog.views import index
 
 def register(request):
     if request.method == "POST":
@@ -10,7 +12,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get("username")
             messages.success(request, f"Account created for {username}!")
-            return redirect("users/login")
+            return redirect(index)
     else:
         form = UserRegisterForm()
     return render(request, "users/register.html", {"form": form})
