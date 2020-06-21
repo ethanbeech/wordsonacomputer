@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for staff in object_list %}
+    <div class="reducedBlog">
+      <div class="interiorMargin">
+        <h2>{{ staff.full_name }}</h2>
+        <p>{{ staff.description }} </p>
+      </div>
+    </div>
+  {% endfor %}
+{%endblock%}

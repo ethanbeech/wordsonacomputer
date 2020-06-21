@@ -2,11 +2,11 @@
 {% block content %}
 <section>
   <div class="imageGrid">
-    <a href="{% url 'logout' %}"><p>Logout</p></a>
-    <a href="{% url 'staffprofile' %}"><p>Profile</p></a>
-    <a href="{% url 'create_post' %}"><p>Create Post</p></a>
-    <a href="{% url 'author_posts' user.username %}"><p>My Posts</p></a>
-    <a href="{% url 'editor_posts' %}"><p>Review Posts</p></a>
+    <a class="imageGridItem" href="{% url 'logout' %}"><p>Logout</p></a>
+    <a class="imageGridItem" href="{% url 'staff_profile_page' %}"><p>Profile</p></a>
+    <a class="imageGridItem" href="{% url 'create_post' %}"><p>Create Post</p></a>
+    <a class="imageGridItem" href="{% url 'author_posts' user.username %}"><p>My Posts</p></a>
+    <a class="imageGridItem" href="{% url 'editor_posts' %}"><p>Review Posts</p></a>
   </div>
 </section>
 {%endblock%}

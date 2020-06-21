@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Post, RepeatBlog
+from staff.models import StaffMember
 from django.utils import timezone
 from django.http import HttpResponse
 import datetime
@@ -20,6 +21,10 @@ class BlogNameList(generic.ListView):
 class PostList(generic.ListView):
     queryset = Post.objects.filter(publish=True).order_by("-created_on")
     template_name = "repeat_blog_posts.html"
+
+class AboutList(generic.ListView):
+    model = StaffMember
+    template_name = "about.html"
 
 def RepeatBlogPosts(request, blogname):
     name_id = RepeatBlog.objects.get(name=blogname)

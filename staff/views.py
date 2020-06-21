@@ -1,12 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from blog.models import Post
+from .models import StaffMember
 from django.views import generic
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import messages
+from django.db import models
 from users.models import staff_check, editor_check, author_check
+from .forms import StaffUpdateForm, ProfileUpdateForm
+
 
 class CreatePost(LoginRequiredMixin, generic.CreateView):
     model = Post
@@ -78,10 +82,32 @@ def authorPostList(request, authorname):
     }
     return render(request, "staff/author_posts.html", context)
 
-@user_passes_test(staff_check, login_url="{% url 'home' %}")
+@user_passes_test(staff_check)
 @login_required
 def staffProfilePage(request):
     return render(request, "staff/staff_profile.html")
+
+@user_passes_test(staff_check, login_url="{% url 'home' %}")
+@login_required
+def staffProfilePageUpdate(request):
+    current_user_id = request.user.id
+    if request.method == "POST":
+        staff_form = StaffUpdateForm(request.POST, request.FILES, instance=StaffMember.objects.get(user=current_user_id))
+        user_form = ProfileUpdateForm(request.POST, instance=request.user)
+        if staff_form.is_valid() and user_form.is_valid():
+            staff_form.save()
+            user_form.save()
+            messages.success(request, f"Your account has been updated!")
+            return redirect('staff_profile_page')
+    else:
+        staff_form = StaffUpdateForm(instance=StaffMember.objects.get(user=current_user_id))
+        user_form = ProfileUpdateForm(instance=request.user)
+
+    context = {
+        'staff_form': staff_form,
+        'user_form': user_form
+    }
+    return render(request, "staff/staff_profile_update.html", context)
 
 def unauthorisedPage(request):
     return render(request, "staff/unauthorisedpage.html")

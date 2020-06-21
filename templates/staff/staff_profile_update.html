@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="pageContainer">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Update Profile</legend>
+      {{ staff_form|crispy  }}
+      {{ user_form|crispy  }}
+      <button type="submit">Update</button>
+    </fieldset>
+  </form>
+</div>
+
+{% endblock content %}

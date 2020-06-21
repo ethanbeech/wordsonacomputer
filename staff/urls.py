@@ -2,7 +2,8 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    path("staffprofile/", views.staffProfilePage, name="staffprofile"),
+    path("staffprofile/update", views.staffProfilePageUpdate, name="update_staff_profile"),
+    path("staffprofile/", views.staffProfilePage, name="staff_profile_page"),
     path("createpost/", views.CreatePost.as_view(), name="create_post"),
     path("unauthorisedpage/", views.unauthorisedPage, name="unauthorised_page"),
     path("staffhomepage/", views.staffHomePage, name="staff_home"),

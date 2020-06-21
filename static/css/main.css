@@ -1,5 +1,6 @@
 :root {
     --mainBackgroundColor: rgb(252, 252, 252);
+    --secondaryBackgroundColor: rgb(230, 230, 230);
     --mainTextColor: rgb(75, 75, 75);
     --leftMarginWidth: 40px;
     --baseNavbarColor: rgb(166, 153, 154);
@@ -56,21 +57,31 @@ a:hover {
 
 .imageGrid {
   width: 60%;
-  text-align: center;
-  margin: auto;
+  margin:auto;
   margin-top: 100px;
   margin-bottom: 100px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-.imageGrid p {
-  align-items: center;
-  justify-content: center;
+.imageGridItem {
   width: 200px;
   height: 150px;
-  display: inline-flex;
+  display: inline-block;
   background-color: var(--mainTextColor);
-  color: white;
-  font-size: 20px;
+	margin: 5px;
+	position: relative;
+}
+
+.imageGridItem p {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	width: 160px;
+	padding-left: 20px;
+	word-break: break-word;
 }
 
 /* Image Grid END */
@@ -130,16 +141,17 @@ section {
 
 button {
 	background-color: var(--mainBackgroundColor);
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
 	margin-bottom: 10px;
 	border-radius: 10px;
+  font-style: italic;
 }
 
 button:hover {
-	background-color: rgb(225, 225, 225);
+	background-color: var(--secondaryBackgroundColor);
 }
 
 /* Feed Page End */
@@ -156,3 +168,26 @@ button:hover {
 }
 
 /* Authorbar End */
+
+/* Forms */
+
+fieldset {
+  background-color: var(--secondaryBackgroundColor);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input {
+  background-color: var(--mainBackgroundColor);
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.belowForm {
+  margin-top: 10px;
+}
+
+/* Forms End */

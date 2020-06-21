@@ -4,7 +4,7 @@
 <section>
   <div class="imageGrid">
     {% for blog in object_list %}
-    <a href="{% url 'repeat_blog_posts' blog.name %}">
+    <a class="imageGridItem" href="{% url 'repeat_blog_posts' blog.name %}">
       <p>{{ blog.name }}</p>
     </a>
     {% endfor %}

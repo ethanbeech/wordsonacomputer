@@ -2,17 +2,17 @@
 {% block content %}
 <section>
   <div class="imageGrid">
-    <a href="{% url 'feed' %}"><p>Recent Posts</p></a>
-    <a href="{% url 'blogArchive' %}"><p>Post Archive</p></a>
+    <a class="imageGridItem" href="{% url 'feed' %}"><p>Recent Posts</p></a>
+    <a class="imageGridItem" href="{% url 'blogArchive' %}"><p>Post Archive</p></a>
     {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}"><p>Logout</p></a>
-    <a href="{% url 'staff_home' %}"><p>Staff Site</p></a>
+    <a class="imageGridItem" href="{% url 'logout' %}"><p>Logout</p></a>
+    <a class="imageGridItem" href="{% url 'staff_home' %}"><p>Staff Site</p></a>
     {% else %}
-    <a href="{% url 'login' %}"><p>Login</p></a>
-    <a href="{% url 'staff_home' %}"><p>Staff Login</p></a>
+    <a class="imageGridItem" href="{% url 'login' %}"><p>Login</p></a>
+    <a class="imageGridItem" href="{% url 'staff_home' %}"><p>Staff Login</p></a>
     {% endif %}
-    <a href="#"><p>Profile</p></a>
-    <a href="#"><p>About Us</p></a>
+    <a class="imageGridItem" href="#"><p>Profile</p></a>
+    <a class="imageGridItem" href="#"><p>About Us</p></a>
   </div>
 </section>
 {%endblock%}
