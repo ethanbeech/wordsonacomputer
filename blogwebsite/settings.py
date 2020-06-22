@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'staff.apps.StaffConfig',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,20 @@ LOGIN_REDIRECT_URL = "home"
 LOGIN_URL = "login"
 
 django_heroku.settings(locals())
+
+#S3 Buckets Config
+#I dont know how half of this shit works
+#Please don't steal these keys, I can't face learning about environment variables
+
+AWS_ACCESS_KEY_ID = 'AKIAQWLS23URPWBAQ33G'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'wordsonacomputer-static-files'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+AWS_S3_ADDRESSING_STYLE = "virtual"

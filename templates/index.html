@@ -11,8 +11,8 @@
     <a class="imageGridItem" href="{% url 'login' %}"><p>Login</p></a>
     <a class="imageGridItem" href="{% url 'staff_home' %}"><p>Staff Login</p></a>
     {% endif %}
-    <a class="imageGridItem" href="#"><p>Profile</p></a>
-    <a class="imageGridItem" href="#"><p>About Us</p></a>
+    <a class="imageGridItem" href="{% url 'profilePage' %}"><p>Profile</p></a>
+    <a class="imageGridItem" href="{% url 'about' %}"><p>About Us</p></a>
   </div>
 </section>
 {%endblock%}
