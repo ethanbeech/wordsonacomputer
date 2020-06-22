@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db import models
 from users.models import staff_check, editor_check, author_check
-from .forms import StaffUpdateForm, ProfileUpdateForm
+from .forms import StaffUpdateForm
+from users.forms import ProfileUpdateForm
 
 
 class CreatePost(LoginRequiredMixin, generic.CreateView):

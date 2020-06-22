@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  <div class="pageContainer">
+    <div class="reducedBlog">
+      <div class="interiorMargin">
+        <h1 style="text-align: center;">{{ user.username }}</h1>
+        <p>Email Address: {{ user.email }}</p>
+        <a href="{% url 'update_user_profile' %}"><button type="button">Update profile</button></a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

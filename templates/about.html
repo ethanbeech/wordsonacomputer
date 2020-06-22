@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-  {% for staff in object_list %}
+  <div class="pageContainer">
+    {% for staff in object_list %}
     <div class="reducedBlog">
       <div class="interiorMargin">
-        <h2>{{ staff.full_name }}</h2>
-        <p>{{ staff.description }} </p>
+        <div class="container">
+          <h2 style="display: inline; float: left;">{{ staff.full_name }}</h2>
+          <img class="profilePictureDisplay" src="{{ staff.profile_picture.url }}">
+        </div>
+        <p> {{ staff.description }} </p>
       </div>
     </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
+  <div class="pageContainer">
+    <div class="reducedBlog">
+      <div class="interiorMargin">
+        <h2>Got a query?</h2>
+        <h3>Email: wordsonacomputer@gmail.com</h3>
+        <p>Be sure to spam the social media accounts linked in the bottom right aswell - we don't check our emails!</p>
+      </div>
+    </div>
+  </div>
 {%endblock%}

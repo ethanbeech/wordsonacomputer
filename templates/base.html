@@ -13,14 +13,14 @@
           <ul>
 
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}"><li>LOGOUT</li></a>
             <a href="{% url 'staff_home' %}"><li>STAFF SITE</li></a>
+            <a href="{% url 'logout' %}"><li>LOGOUT</li></a>
             {% else %}
-            <a href="{% url 'login' %}"><li>LOGIN</li></a>
             <a href="{% url 'staff_home' %}"><li>STAFF LOGIN</li></a>
+            <a href="{% url 'login' %}"><li>LOGIN</li></a>
             {% endif %}
+            <a href="#"><li>PROFILE</li></a>
             <a href="{% url 'about' %}"><li>ABOUT US</li></a>
-            <a href="#"><li>CONTACT</li></a>
             <a href="{% url 'blogArchive' %}"><li>ARCHIVED BLOGS</li></a>
             <a href="{% url 'feed' %}"><li>RECENT BLOGS</li></a>
           </ul>
@@ -35,7 +35,7 @@
         {% endblock content %}
         <footer>
           <nav class="socialLinks">
-            <p>© 2020 All rights reserved</p>
+            <p>© 2020 All rights reserved<br>Powered by SquareSpace</p>
             <ul>
               <a href="https://twitter.com/Alexhart50Alex"><li><img border="0" alt="twitter share link" src="{% static 'images/twitterLogo.png' %}" width="20" height="20"/></li></a>
               <a href="https://www.instagram.com/alex_j_hart/"><li><img border="0" alt="instagram share link" src="{% static 'images/instagramLogo.png' %}" width="20" height="20"/></li></a>

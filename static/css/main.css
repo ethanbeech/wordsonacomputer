@@ -72,6 +72,7 @@ a:hover {
   background-color: var(--mainTextColor);
 	margin: 5px;
 	position: relative;
+  border-radius: 10px;
 }
 
 .imageGridItem p {
@@ -191,3 +192,20 @@ input {
 }
 
 /* Forms End */
+
+/* Profile Pages */
+
+.profilePictureDisplay {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  float: right;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Profiles Pages End */

@@ -6,8 +6,3 @@ class StaffUpdateForm(forms.ModelForm):
     class Meta:
         model = StaffMember
         fields = ['full_name', 'description', 'profile_picture']
-
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email']
