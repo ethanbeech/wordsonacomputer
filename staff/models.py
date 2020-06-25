@@ -9,4 +9,4 @@ class StaffMember(models.Model):
     full_name = models.CharField(max_length=100, default="unspecified", blank=True)
 
     def __str__(self):
-        return self.description
+        return self.full_name

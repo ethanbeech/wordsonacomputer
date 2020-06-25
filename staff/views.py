@@ -86,7 +86,13 @@ def authorPostList(request, authorname):
 @user_passes_test(staff_check)
 @login_required
 def staffProfilePage(request):
-    return render(request, "staff/staff_profile.html")
+    current_user_id = request.user.id
+    staff_profile = StaffMember.objects.get(user=current_user_id)
+    user_profile = User
+    context = {
+        'staff_profile': staff_profile,
+    }
+    return render(request, "staff/staff_profile.html", context)
 
 @user_passes_test(staff_check, login_url="{% url 'home' %}")
 @login_required

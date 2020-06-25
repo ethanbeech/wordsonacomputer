@@ -134,6 +134,7 @@ section {
 	margin-left: 20px;
   margin-right: 20px;
 	margin-top: -10px;
+  overflow: hidden;
 }
 
 .fadeText {
@@ -193,7 +194,7 @@ input {
 
 /* Forms End */
 
-/* Profile Pages */
+/* About Us */
 
 .profilePictureDisplay {
   border-radius: 50%;
@@ -208,4 +209,24 @@ input {
   overflow: hidden;
 }
 
-/* Profiles Pages End */
+/* About Us End */
+
+/* Staff Profile */
+
+.staffInformationList {
+  float: left;
+  list-style: none;
+}
+
+.staffPictureDisplay {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  float: right;
+}
+
+.paddingBox {
+  margin-bottom: 20px;
+}
+
+/* Staff Profile End */

@@ -1,5 +1,19 @@
-{% extends "base.html" %}
+{% extends "staff/staffbase.html" %}
 {% block content %}
-<h1>{{ user.username }}</h1>
-
+<div class="pageContainer">
+  <div class="reducedBlog">
+    <div class="interiorMargin">
+      <h1 style="text-align: center;">{{ staff_profile.full_name }}</h1>
+      <div class="container">
+        <ul class="staffInformationList">
+          <li><p>Username: {{ user.username }}</p></li>
+          <li><p>Email Address: {{ user.email }}</p></li>
+          <li><p>Description: {{ staff_profile.description }}</p></li>
+          <li><a href="{% url 'update_staff_profile' %}"><button type="button">Update profile</button></a></li>
+        </ul>
+        <img class="staffPictureDisplay" src="{{ staff_profile.profile_picture.url }}">
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

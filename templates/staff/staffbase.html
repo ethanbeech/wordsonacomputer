@@ -11,18 +11,12 @@
         <nav class="mainNav">
           <a href="{% url 'home' %}"><p>Wordsonacomputer</p></a>
           <ul>
-
-            {% if user.is_authenticated %}
-            <a href="{% url 'staff_home' %}"><li>STAFF SITE</li></a>
+            <a href="{% url 'staff_home' %}"><li>STAFF HOMEPAGE</li></a>
             <a href="{% url 'logout' %}"><li>LOGOUT</li></a>
-            {% else %}
-            <a href="{% url 'staff_home' %}"><li>STAFF LOGIN</li></a>
-            <a href="{% url 'login' %}"><li>LOGIN</li></a>
-            {% endif %}
-            <a href="{% url 'profilePage' %}"><li>PROFILE</li></a>
-            <a href="{% url 'about' %}"><li>ABOUT US</li></a>
-            <a href="{% url 'blogArchive' %}"><li>ARCHIVED BLOGS</li></a>
-            <a href="{% url 'feed' %}"><li>RECENT BLOGS</li></a>
+            <a href="{% url 'staff_profile_page' %}"><li>PROFILE</li></a>
+            <a href="{% url 'create_post' %}"><li>CREATE POST</li></a>
+            <a href="{% url 'author_posts' user.username %}"><li>AUTHOR POSTS</li></a>
+            <a href="{% url 'editor_posts' %}"><li>REVIEW POSTS</li></a>
           </ul>
         </nav>
         {% if messages %}
