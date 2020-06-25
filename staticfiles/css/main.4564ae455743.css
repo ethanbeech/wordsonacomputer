@@ -1,0 +1,232 @@
+:root {
+    --mainBackgroundColor: rgb(252, 252, 252);
+    --secondaryBackgroundColor: rgb(230, 230, 230);
+    --mainTextColor: rgb(75, 75, 75);
+    --leftMarginWidth: 40px;
+    --baseNavbarColor: rgb(166, 153, 154);
+
+}
+
+body {
+    margin-left: var(--leftMarginWidth);
+    background-color: var(--mainBackgroundColor);
+    color: var(--mainTextColor);
+}
+
+/* Links */
+
+a:link {
+  text-decoration: none;
+}
+
+/* Links End */
+
+/* Navbar Start */
+
+.mainNav {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.mainNav ul li {
+    list-style: none;
+    list-style-position: inside;
+    display: inline-block;
+}
+
+.mainNav ul a {
+    margin-right: 40px;
+    float: right;
+    text-decoration: none;
+    color: var(--baseNavbarColor);
+}
+
+.mainNav p {
+  float: left;
+  border-left: 40px;
+  color: var(--baseNavbarColor);
+}
+
+a:hover {
+    color: var(--mainTextColor);
+}
+
+/* Navbar End */
+
+/* Image Grid */
+
+.imageGrid {
+  width: 60%;
+  margin:auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.imageGridItem {
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+  background-color: var(--mainTextColor);
+	margin: 5px;
+	position: relative;
+  border-radius: 10px;
+}
+
+.imageGridItem p {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	width: 160px;
+	padding-left: 20px;
+	word-break: break-word;
+}
+
+/* Image Grid END */
+
+/* Footer */
+
+.socialLinks p {
+  float: left;
+}
+
+.socialLinks ul a {
+  float: right;
+  display: inline-block;
+  margin-right: 10px;
+  list-style: none;
+}
+
+/* Footer End */
+
+/* Index Page */
+
+section {
+	background-color: grey;
+  margin-left: -40px;
+  margin-right: -8px;
+}
+
+/* Index Page End */
+
+/* Feed Page */
+
+.pageContainer {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.reducedBlog {
+	border: solid;
+	border-radius: 5px;
+	border-color: var(--baseNavbarColor);
+	border-width: 5px;
+	background-color: var(--mainBackgroundColor);
+  margin-bottom: 20px;
+}
+
+.interiorMargin {
+	margin-left: 20px;
+  margin-right: 20px;
+	margin-top: -10px;
+  overflow: hidden;
+}
+
+.fadeText {
+	opacity: 50%;
+}
+
+button {
+	background-color: var(--mainBackgroundColor);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+  font-style: italic;
+}
+
+button:hover {
+	background-color: var(--secondaryBackgroundColor);
+}
+
+/* Feed Page End */
+
+/* Detail Blog */
+
+/* Detail Blog End */
+
+/* Authorbar */
+
+.authorbarContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Authorbar End */
+
+/* Forms */
+
+fieldset {
+  background-color: var(--secondaryBackgroundColor);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input {
+  background-color: var(--mainBackgroundColor);
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.belowForm {
+  margin-top: 10px;
+}
+
+/* Forms End */
+
+/* About Us */
+
+.profilePictureDisplay {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  float: right;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* About Us End */
+
+/* Staff Profile */
+
+.staffInformationList {
+  float: left;
+  list-style: none;
+}
+
+.staffPictureDisplay {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  float: right;
+}
+
+.paddingBox {
+  margin-bottom: 20px;
+}
+
+/* Staff Profile End */

@@ -28,7 +28,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.wordsonacomputer.co.uk/']
 
-
 # Application definition
 
 INSTALLED_APPS = [
