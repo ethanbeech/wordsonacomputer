@@ -8,9 +8,12 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
+class RepeatBlogAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
 class StaffMemberAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'user')
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(RepeatBlog)
+admin.site.register(RepeatBlog, RepeatBlogAdmin)
 admin.site.register(StaffMember, StaffMemberAdmin)
