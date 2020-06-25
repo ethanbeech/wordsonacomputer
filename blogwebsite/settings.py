@@ -26,7 +26,7 @@ SECRET_KEY = '62ez4kw!bv-#)me!%9mnr_!jjncoz3xjrw-op51ic%t_hzm1oj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wordsonacomputer.herokuapp.com']
+ALLOWED_HOSTS = ['wordsonacomputer.co.uk/']
 
 
 # Application definition
