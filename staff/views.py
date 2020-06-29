@@ -74,7 +74,7 @@ def editorPostList(request):
     context = {
         "post_list" : queryset
     }
-    return render(request, "staff/author_posts.html", context)
+    return render(request, "staff/editor_posts.html", context)
 
 @user_passes_test(author_check, login_url="{% url 'home' %}")
 @login_required
