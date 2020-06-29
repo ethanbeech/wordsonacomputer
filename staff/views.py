@@ -19,7 +19,10 @@ class CreatePost(LoginRequiredMixin, generic.CreateView):
     template_name = "staff/post_create.html"
 
     def form_valid(self, form):
+        current_user_id = self.request.user.id
+        staff_profile = StaffMember.objects.get(user=current_user_id)
         form.instance.author = self.request.user
+        form.instance.author_name = staff_profile
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
