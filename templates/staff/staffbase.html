@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Wordsonacomputer</title>
+        <title>Wordsonacomputer Staff Site</title>
         <link href="{% static 'css/main.css' %}" rel="stylesheet">
     </head>
 
     <body>
         <!-- Navigation -->
         <nav class="mainNav">
-          <a href="{% url 'home' %}"><p>Wordsonacomputer</p></a>
+          <a href="{% url 'staff_home' %}"><p>Wordsonacomputer Staff Site</p></a>
           <ul>
-            <a href="{% url 'staff_home' %}"><li>STAFF HOMEPAGE</li></a>
+            <a href="{% url 'home' %}"><li>USER SITE</li></a>
             <a href="{% url 'logout' %}"><li>LOGOUT</li></a>
             <a href="{% url 'staff_profile_page' %}"><li>PROFILE</li></a>
             <a href="{% url 'create_post' %}"><li>CREATE POST</li></a>

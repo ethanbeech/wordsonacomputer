@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from blog.models import Post
 from .models import StaffMember
 from django.views import generic
@@ -17,6 +18,7 @@ class CreatePost(LoginRequiredMixin, generic.CreateView):
     model = Post
     fields = ["title", "content", "name", "status"]
     template_name = "staff/post_create.html"
+    success_url = reverse_lazy("staff_home")
 
     def form_valid(self, form):
         current_user_id = self.request.user.id
