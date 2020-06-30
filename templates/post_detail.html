@@ -9,7 +9,10 @@
           <p class="fadeText">{{ post.author }} | {{ post.created_on }}</p>
           <p>{{ object.content | safe |linebreaksbr}}</p>
         </div>
-        {% block authorbar %} {% include 'widgets\authorbar.html' %} {% endblock authorbar %}
+        <div class="authorbarContainer">
+              <p>{{ post.author }}</p>
+              <p>{{ post.created_on }}</p>
+        </div>
       </div>
     </div>
 </div>
