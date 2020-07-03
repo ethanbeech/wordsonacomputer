@@ -28,7 +28,7 @@ class Post(models.Model):
     name = models.ForeignKey(RepeatBlog, on_delete=models.CASCADE, default="0")
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-updated_on']
 
     def __str__(self):
         return self.title

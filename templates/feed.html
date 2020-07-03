@@ -6,7 +6,7 @@
     <div class="reducedBlog">
       <div class="interiorMargin">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.author_name }} | {{ post.created_on}} </p>
+        <p>{{ post.author_name }} | {{ post.updated_on}} </p>
         <p>{{post.content|slice:":200" }}</p>
 				<a href="{% url 'post_detail' post.slug %}"><button type="button">Read more</button></a>
       </div>

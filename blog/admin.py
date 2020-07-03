@@ -3,7 +3,7 @@ from .models import Post, RepeatBlog
 from staff.models import StaffMember
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
+    list_display = ('title', 'slug', 'status','updated_on')
     list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}

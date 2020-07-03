@@ -7,7 +7,7 @@ from django.http import HttpResponse
 import datetime
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(publish=True).order_by("-created_on").filter(created_on__lte=timezone.now(), created_on__gt=timezone.now()-datetime.timedelta(days=30))
+    queryset = Post.objects.filter(publish=True).order_by("-updated_on").filter(updated_on__lte=timezone.now(), created_on__gt=timezone.now()-datetime.timedelta(days=30))
     template_name = "feed.html"
 
 class PostDetail(generic.DetailView):
@@ -19,7 +19,7 @@ class BlogNameList(generic.ListView):
     template_name = "blog_archive.html"
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(publish=True).order_by("-created_on")
+    queryset = Post.objects.filter(publish=True).order_by("-updated_on")
     template_name = "repeat_blog_posts.html"
 
 class AboutList(generic.ListView):
@@ -28,7 +28,7 @@ class AboutList(generic.ListView):
 
 def RepeatBlogPosts(request, blogname):
     name_id = RepeatBlog.objects.get(name=blogname)
-    queryset = Post.objects.filter(name=name_id).filter(publish=True).order_by("-created_on")
+    queryset = Post.objects.filter(name=name_id).filter(publish=True).order_by("-updated_on")
     context = {
         "post_list" : queryset
     }

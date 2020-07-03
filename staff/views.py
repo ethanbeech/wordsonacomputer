@@ -72,7 +72,7 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
 @user_passes_test(editor_check, login_url="{% url 'home' %}")
 @login_required
 def editorPostList(request):
-    queryset = Post.objects.filter(publish=False).order_by("created_on")
+    queryset = Post.objects.filter(publish=False).order_by("updated_on")
     context = {
         "post_list" : queryset
     }
@@ -82,7 +82,7 @@ def editorPostList(request):
 @login_required
 def authorPostList(request, authorname):
     author_idnumber = User.objects.get(username=authorname)
-    queryset = Post.objects.filter(author=author_idnumber).filter(status=1).order_by("-created_on")
+    queryset = Post.objects.filter(author=author_idnumber).filter(status=1).order_by("-updated_on")
     context = {
         "post_list" : queryset
     }
