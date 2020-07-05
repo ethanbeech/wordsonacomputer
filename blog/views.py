@@ -7,7 +7,7 @@ from django.http import HttpResponse
 import datetime
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(publish=True).order_by("-updated_on").filter(updated_on__lte=timezone.now(), created_on__gt=timezone.now()-datetime.timedelta(days=30))
+    queryset = Post.objects.filter(publish=True).order_by("-updated_on").filter(updated_on__lte=timezone.now(), created_on__gt=timezone.now()-datetime.timedelta(days=180))
     template_name = "feed.html"
 
 class PostDetail(generic.DetailView):
