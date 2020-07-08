@@ -6,7 +6,7 @@
     <div class="reducedBlog">
       <div class="interiorMargin">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.author }} | {{ post.updated_on}} </p>
+        <p>{{ post.author_name }} | {{ post.updated_on}} </p>
         <p>{{post.content|slice:":200" }}</p>
 				<a href="{% url 'update_post' post.slug %}"><button type="button">Update</button></a>
       </div>

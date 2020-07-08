@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, RepeatBlog
+from .models import Post, RepeatBlog, Comment
 from staff.models import StaffMember
 
 class PostAdmin(admin.ModelAdmin):
@@ -14,6 +14,11 @@ class RepeatBlogAdmin(admin.ModelAdmin):
 class StaffMemberAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'user')
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ("author", "post", "created_on", "censored")
+    list_filter = ("post",)
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(RepeatBlog, RepeatBlogAdmin)
 admin.site.register(StaffMember, StaffMemberAdmin)
+admin.site.register(Comment, CommentAdmin)

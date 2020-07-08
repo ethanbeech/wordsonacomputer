@@ -154,3 +154,6 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AWS_S3_ADDRESSING_STYLE = "virtual"
+
+
+# wordsonacomputer@gmail.com Password: Lev!t!cus18

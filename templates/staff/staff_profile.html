@@ -4,6 +4,7 @@
   <div class="reducedBlog">
     <div class="interiorMargin">
       <h1 style="text-align: center;">{{ staff_profile.full_name }}</h1>
+      <img class="staffPictureDisplay" src="{{ staff_profile.profile_picture.url }}">
       <div class="container">
         <ul class="staffInformationList">
           <li><p>Username: {{ user.username }}</p></li>
@@ -11,7 +12,6 @@
           <li><p>Description: {{ staff_profile.description }}</p></li>
           <li><a href="{% url 'update_staff_profile' %}"><button type="button">Update profile</button></a></li>
         </ul>
-        <img class="staffPictureDisplay" src="{{ staff_profile.profile_picture.url }}">
       </div>
     </div>
   </div>

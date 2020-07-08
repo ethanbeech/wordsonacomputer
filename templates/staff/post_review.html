@@ -1,12 +1,14 @@
 {% extends "staff/staffbase.html" %}
 {% block content %}
 
+<!-- I don't think this is being used by anything -->
+
 <div class="pageContainer">
     {% for post in post_list %}
     <div class="reducedBlog">
       <div class="interiorMargin">
         <h2>{{ post.title }}</h2>
-        <p>{{ post.author }} | {{ post.updated_on}} </p>
+        <p>{{ post.author_name }} | {{ post.updated_on}} </p>
         <p>{{post.content|slice:":200" }}</p>
 				<a href="{% url 'post_detail' post.slug %}"><button type="button">Read more</button></a>
       </div>

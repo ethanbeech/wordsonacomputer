@@ -5,9 +5,9 @@
     <div class="reducedBlog">
       <div class="interiorMargin">
         <div>
-          <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+          <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
           <p class="fadeText">{{ post.author_name }} | {{ post.updated_on }}</p>
-          <p>{{ object.content | safe |linebreaksbr}}</p>
+          <p>{{ post.content | safe |linebreaksbr}}</p>
         </div>
         <div class="authorbarContainer">
               <p>{{ post.author_name }}</p>
@@ -15,6 +15,43 @@
         </div>
       </div>
     </div>
+    <!-- EXISTING COMMENTS -->
+    <div>
+    {% for comment in comments %}
+      {% if comment.censored == False %}
+        <div style="padding: 10px;">
+          <p>
+            {{ comment.author.username }}
+            <span>
+              {{ comment.created_on }}
+            </span>
+          </p>
+        {{ comment.body | linebreaks }}
+        </div>
+      {% elif comment.censored %}
+      <div style="padding: 10px;">
+        <p>
+          Unknown
+          <span>
+            {{ comment.created_on }}
+          </span>
+        </p>
+      This comment has been censored by a site admin
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    <!-- END EXISTING COMMENTS -->
+    <!-- CREATE NEW COMMENT -->
+    <div>
+    <h3>Leave a comment</h3>
+    <form method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+    <!-- END CREATE NEW COMMENT -->
 </div>
 
 {% endblock content %}
