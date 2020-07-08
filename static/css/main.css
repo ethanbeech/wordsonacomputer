@@ -160,6 +160,36 @@ button:hover {
 
 /* Detail Blog */
 
+/* Comments */
+
+.commentBox {
+  width: 90%;
+  margin: auto;
+}
+
+.individualComment {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--secondaryBackgroundColor);
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.commentHeader {
+  padding-bottom: 40px;
+}
+
+.createComment {
+  background-color: var(--secondaryBackgroundColor);
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Comments End */
+
 /* Detail Blog End */
 
 /* Authorbar */
@@ -182,6 +212,14 @@ fieldset {
 input {
   background-color: var(--mainBackgroundColor);
   border-radius: 4px;
+}
+
+/* post_detail.html */
+
+textarea {
+  width: 90%;
+  border-radius: 10px;
+  resize: vertical;
 }
 
 .form-group {

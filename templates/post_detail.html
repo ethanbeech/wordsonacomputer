@@ -16,39 +16,35 @@
       </div>
     </div>
     <!-- EXISTING COMMENTS -->
-    <div>
+    <div class="commentBox">
     {% for comment in comments %}
       {% if comment.censored == False %}
-        <div style="padding: 10px;">
-          <p>
-            {{ comment.author.username }}
-            <span>
-              {{ comment.created_on }}
-            </span>
-          </p>
-        {{ comment.body | linebreaks }}
+        <div class="individualComment">
+          <div class="commentHeader">
+            <p style="float: left">{{ comment.author.username }}</p>
+            <p style="float: right">{{ comment.created_on }}</p>
+          </div>
+          <p>{{ comment.body | linebreaks }}</p>
         </div>
       {% elif comment.censored %}
-      <div style="padding: 10px;">
-        <p>
-          Unknown
-          <span>
-            {{ comment.created_on }}
-          </span>
-        </p>
-      This comment has been censored by a site admin
+      <div class="individualComment">
+        <div class="commentHeader">
+          <p style="float: left">unknown</p>
+          <p style="float: right">{{ comment.created_on }}</p>
+        </div>
+        <p>This comment has been censored by a site admin</p>
       </div>
     {% endif %}
     {% endfor %}
     </div>
     <!-- END EXISTING COMMENTS -->
     <!-- CREATE NEW COMMENT -->
-    <div>
+    <div class=createComment style="text-align: center;">
     <h3>Leave a comment</h3>
     <form method="post">
       {{ comment_form.as_p }}
       {% csrf_token %}
-      <button type="submit">Submit</button>
+      <button type="submit">Post</button>
     </form>
     </div>
     <!-- END CREATE NEW COMMENT -->
