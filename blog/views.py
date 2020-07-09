@@ -39,8 +39,7 @@ def PostDetail(request, slug):
             new_comment.censored = False
             # Save the comment to the database
             new_comment.save()
-            # Reset comment form so it is now blank
-            comment_form = CommentForm()
+            return HttpResponseRedirect(request.path)
     else:
         comment_form = CommentForm()
     return render(request, template_name, {'post': post,
