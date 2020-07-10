@@ -2,15 +2,17 @@
 {% block content %}
   <div class="pageContainer">
     {% for staff in object_list %}
-    <div class="reducedBlog">
-      <div class="interiorMargin">
-        <div class="container">
-          <h2 style="display: inline; float: left;">{{ staff.full_name }}</h2>
-          <img class="profilePictureDisplay" src="{{ staff.profile_picture.url }}">
+      {% if staff.visible %}
+      <div class="reducedBlog">
+        <div class="interiorMargin">
+          <div class="container">
+            <h2 style="display: inline; float: left;">{{ staff.full_name }}</h2>
+            <img class="profilePictureDisplay" src="{{ staff.profile_picture.url }}">
+          </div>
+          <p> {{ staff.description }} </p>
         </div>
-        <p> {{ staff.description }} </p>
       </div>
-    </div>
+      {% endif %}
     {% endfor %}
   </div>
   <div class="pageContainer">
