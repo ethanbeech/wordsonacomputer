@@ -3,14 +3,16 @@
 
 <div class="pageContainer">
     {% for post in post_list %}
-    <div class="reducedBlog">
-      <div class="interiorMargin">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.author_name }} | {{ post.updated_on}} </p>
-        <p>{{post.content|slice:":200" }}</p>
-				<a href="{% url 'editor_update_post' post.slug %}"><button type="button">Update</button></a>
+    {% if post.author != user %}
+      <div class="reducedBlog">
+        <div class="interiorMargin">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.author_name }} | {{ post.updated_on}} </p>
+          <p>{{post.content|slice:":200" }}</p>
+  				<a href="{% url 'editor_update_post' post.slug %}"><button type="button">Update</button></a>
+        </div>
       </div>
-    </div>
+    {% endif %}
     {% endfor %}
 </div>
 

@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="pageContainer">
+  {% if post.author != user %}
   <form method="POST">
     {% csrf_token %}
     <fieldset>
@@ -11,6 +12,9 @@
       <button type="submit">Update</button>
     </fieldset>
   </form>
+  {% else %}
+  <h3 style="text-align: center">You cannot edit your own post via the editor page</h3>
+  {% endif %}
 </div>
 
 {% endblock content %}
